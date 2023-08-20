@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F0CD6452A9204D500405FE8 /* Travel_App_CliveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */; };
+		3F0CD6472A9204D500405FE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6462A9204D500405FE8 /* ContentView.swift */; };
+		3F0CD6492A9204D600405FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CD6482A9204D600405FE8 /* Assets.xcassets */; };
+		3F0CD64D2A9204D600405FE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CD64C2A9204D600405FE8 /* Preview Assets.xcassets */; };
+		3F0CD6542A9206BC00405FE8 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6532A9206BC00405FE8 /* Base.swift */; };
+		3F0CD6562A92090900405FE8 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6552A92090900405FE8 /* BottomMenu.swift */; };
+		3F0CD65C2A92285200405FE8 /* TopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD65B2A92285200405FE8 /* TopMenu.swift */; };
+		3F0CD65E2A922C2A00405FE8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD65D2A922C2A00405FE8 /* ViewExtension.swift */; };
+		3F0CD6602A922EED00405FE8 /* NotificationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD65F2A922EED00405FE8 /* NotificationBar.swift */; };
+		3F0CD6652A923E2E00405FE8 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6642A923E2E00405FE8 /* TabButton.swift */; };
+		3F0CD66C2A92461900405FE8 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD66B2A92461900405FE8 /* EventsView.swift */; };
+		3F0CD66F2A92476900405FE8 /* EventMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD66E2A92476900405FE8 /* EventMiniView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F0CD6412A9204D500405FE8 /* Travel App Clive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel App Clive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_App_CliveApp.swift; sourceTree = "<group>"; };
+		3F0CD6462A9204D500405FE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3F0CD6482A9204D600405FE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F0CD64A2A9204D600405FE8 /* Travel_App_Clive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travel_App_Clive.entitlements; sourceTree = "<group>"; };
+		3F0CD64C2A9204D600405FE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3F0CD6532A9206BC00405FE8 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		3F0CD6552A92090900405FE8 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
+		3F0CD65B2A92285200405FE8 /* TopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenu.swift; sourceTree = "<group>"; };
+		3F0CD65D2A922C2A00405FE8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		3F0CD65F2A922EED00405FE8 /* NotificationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBar.swift; sourceTree = "<group>"; };
+		3F0CD6642A923E2E00405FE8 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		3F0CD66B2A92461900405FE8 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		3F0CD66E2A92476900405FE8 /* EventMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMiniView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F0CD63E2A9204D500405FE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F0CD6382A9204D500405FE8 = {
+			isa = PBXGroup;
+			children = (
+				3F0CD6432A9204D500405FE8 /* Travel App Clive */,
+				3F0CD6422A9204D500405FE8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F0CD6422A9204D500405FE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F0CD6412A9204D500405FE8 /* Travel App Clive.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F0CD6432A9204D500405FE8 /* Travel App Clive */ = {
+			isa = PBXGroup;
+			children = (
+				3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */,
+				3F0CD6462A9204D500405FE8 /* ContentView.swift */,
+				3F0CD6612A923A6600405FE8 /* Components */,
+				3F0CD6482A9204D600405FE8 /* Assets.xcassets */,
+				3F0CD64A2A9204D600405FE8 /* Travel_App_Clive.entitlements */,
+				3F0CD64B2A9204D600405FE8 /* Preview Content */,
+				3F0CD65D2A922C2A00405FE8 /* ViewExtension.swift */,
+			);
+			path = "Travel App Clive";
+			sourceTree = "<group>";
+		};
+		3F0CD64B2A9204D600405FE8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3F0CD64C2A9204D600405FE8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3F0CD6612A923A6600405FE8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3F0CD6672A92455500405FE8 /* BaseComponents */,
+				3F0CD66D2A92461D00405FE8 /* EventsComponents */,
+				3F0CD6532A9206BC00405FE8 /* Base.swift */,
+				3F0CD66B2A92461900405FE8 /* EventsView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3F0CD6672A92455500405FE8 /* BaseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				3F0CD65B2A92285200405FE8 /* TopMenu.swift */,
+				3F0CD6552A92090900405FE8 /* BottomMenu.swift */,
+				3F0CD6642A923E2E00405FE8 /* TabButton.swift */,
+				3F0CD65F2A922EED00405FE8 /* NotificationBar.swift */,
+			);
+			path = BaseComponents;
+			sourceTree = "<group>";
+		};
+		3F0CD66D2A92461D00405FE8 /* EventsComponents */ = {
+			isa = PBXGroup;
+			children = (
+				3F0CD66E2A92476900405FE8 /* EventMiniView.swift */,
+			);
+			path = EventsComponents;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F0CD6402A9204D500405FE8 /* Travel App Clive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F0CD6502A9204D600405FE8 /* Build configuration list for PBXNativeTarget "Travel App Clive" */;
+			buildPhases = (
+				3F0CD63D2A9204D500405FE8 /* Sources */,
+				3F0CD63E2A9204D500405FE8 /* Frameworks */,
+				3F0CD63F2A9204D500405FE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Travel App Clive";
+			productName = "Travel App Clive";
+			productReference = 3F0CD6412A9204D500405FE8 /* Travel App Clive.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F0CD6392A9204D500405FE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					3F0CD6402A9204D500405FE8 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 3F0CD63C2A9204D500405FE8 /* Build configuration list for PBXProject "Travel App Clive" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F0CD6382A9204D500405FE8;
+			productRefGroup = 3F0CD6422A9204D500405FE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F0CD6402A9204D500405FE8 /* Travel App Clive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F0CD63F2A9204D500405FE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0CD64D2A9204D600405FE8 /* Preview Assets.xcassets in Resources */,
+				3F0CD6492A9204D600405FE8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F0CD63D2A9204D500405FE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0CD6542A9206BC00405FE8 /* Base.swift in Sources */,
+				3F0CD6652A923E2E00405FE8 /* TabButton.swift in Sources */,
+				3F0CD66F2A92476900405FE8 /* EventMiniView.swift in Sources */,
+				3F0CD6562A92090900405FE8 /* BottomMenu.swift in Sources */,
+				3F0CD65E2A922C2A00405FE8 /* ViewExtension.swift in Sources */,
+				3F0CD6602A922EED00405FE8 /* NotificationBar.swift in Sources */,
+				3F0CD6472A9204D500405FE8 /* ContentView.swift in Sources */,
+				3F0CD65C2A92285200405FE8 /* TopMenu.swift in Sources */,
+				3F0CD6452A9204D500405FE8 /* Travel_App_CliveApp.swift in Sources */,
+				3F0CD66C2A92461900405FE8 /* EventsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3F0CD64E2A9204D600405FE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F0CD64F2A9204D600405FE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3F0CD6512A9204D600405FE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Travel App Clive/Travel_App_Clive.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Travel App Clive/Preview Content\"";
+				DEVELOPMENT_TEAM = TC92HTV5TJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.travel.Travel-App-Clive";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F0CD6522A9204D600405FE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Travel App Clive/Travel_App_Clive.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Travel App Clive/Preview Content\"";
+				DEVELOPMENT_TEAM = TC92HTV5TJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.travel.Travel-App-Clive";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F0CD63C2A9204D500405FE8 /* Build configuration list for PBXProject "Travel App Clive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F0CD64E2A9204D600405FE8 /* Debug */,
+				3F0CD64F2A9204D600405FE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F0CD6502A9204D600405FE8 /* Build configuration list for PBXNativeTarget "Travel App Clive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F0CD6512A9204D600405FE8 /* Debug */,
+				3F0CD6522A9204D600405FE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F0CD6392A9204D500405FE8 /* Project object */;
+}
