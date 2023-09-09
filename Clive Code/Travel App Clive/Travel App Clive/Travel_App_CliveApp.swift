@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Travel_App_CliveApp: App {
+    @StateObject private var eventStore = EventStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(eventStore)
         }
     }
 }

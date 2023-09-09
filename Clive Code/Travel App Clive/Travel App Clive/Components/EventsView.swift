@@ -52,7 +52,9 @@ public struct ScrollableView<Content: View>: UIViewControllerRepresentable {
         }
 
         public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            contentOffset.wrappedValue = scrollView.contentOffset
+            DispatchQueue.main.async{ [self] in
+                contentOffset.wrappedValue = scrollView.contentOffset
+            }
         }
     }
 }
@@ -109,7 +111,7 @@ struct VTimeline: View{
 }
 
 struct HTimeline: View{
-    let hours: [String] = ["12 AM", "1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"]
+    let hours: [String] = ["12 AM", "1AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"]
         
     var body: some View {
         HStack(spacing: 24) {
@@ -125,10 +127,26 @@ struct HTimeline: View{
     }
 }
 
+func calculatePosition(for event: Event) -> CGPoint {
+    print(event)
+    let hourWidth = CGFloat(30.0)
+    let calendar = Calendar.current
+    let startHourComponent = calendar.component(.hour, from: event.startTime)
+    let endHourComponent = calendar.component(.hour, from: event.endTime)
+
+
+    let startX = CGFloat(startHourComponent) * hourWidth
+    let startY = CGFloat(endHourComponent) * hourWidth
+    return CGPoint(x: startX, y: startY)
+}
+
+
 struct EventsView: View {
-    
     @State var horizontalOffset: CGPoint = .init(x: 0, y: 0)
     @State var verticalOffset: CGPoint = .init(x: 0, y: 0)
+    
+    @State private var isAddEventViewPresented = false
+    @EnvironmentObject var eventStore: EventStore
 
     var body: some View {
         VStack {
@@ -138,27 +156,70 @@ struct EventsView: View {
             .onChange(of: verticalOffset) { newValue in
                 horizontalOffset.x = newValue.y
             }
-
-            ScrollableView($verticalOffset, isHorizontal: false, content: {
-                VTimeline()
-            })
-            .onChange(of: horizontalOffset) { newValue in
-                verticalOffset.y = newValue.x
+            .frame(height: 200.0)
+            
+            GeometryReader {geometry in
+                HStack(spacing: 5){
+                    ScrollableView($verticalOffset, isHorizontal: false, content: {
+                        VTimeline()
+                    })
+                    .onChange(of: horizontalOffset) { newValue in
+                        verticalOffset.y = newValue.x
+                    }
+                    .frame(width: geometry.size.width * 0.33, height: 500.0)
+                }
+                
+                ZStack {
+                    ForEach(eventStore.events) { event in
+                        EventListView(eventIcon: event.eventIcon,
+                                  location: event.location,
+                                  image: event.image)
+                            .position(calculatePosition(for: event))
+                    }
+                }.frame(width: geometry.size.width * 0.67, height: 500.0)
             }
 
-            VStack {
-                Text("Horizontal Offset: x: \(horizontalOffset.x) y: \(horizontalOffset.y)")
-                Text("Vertical Offset: x: \(verticalOffset.x) y: \(verticalOffset.y)")
-                Button("Top", action: {
-                    horizontalOffset = .zero
-                    verticalOffset = .zero
-                })
-                .buttonStyle(.borderedProminent)
+
+//            VStack {
+//                Text("Horizontal Offset: x: \(horizontalOffset.x) y: \(horizontalOffset.y)")
+//                Text("Vertical Offset: x: \(verticalOffset.x) y: \(verticalOffset.y)")
+//                Button("Top", action: {
+//                    horizontalOffset = .zero
+//                    verticalOffset = .zero
+//                })
+//                .buttonStyle(.borderedProminent)
+//            }
+//            .frame(width: 200)
+//            .padding()
+            
+            Button(action: {
+                isAddEventViewPresented.toggle() // Show the EventMaxView
+            }) {
+                Text("Add Event")
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
             }
-            .frame(width: 200)
+            .sheet(isPresented: $isAddEventViewPresented) {
+                EventMaxView(isPresented: $isAddEventViewPresented)
+            }
             .padding()
+            
+//            GeometryReader { geometry in
+//                ZStack {
+//                    ForEach(eventStore.events) { event in
+//                        EventView(eventIcon: event.eventIcon,
+//                                  location: event.location,
+//                                  image: event.image)
+//                            .position(calculatePosition(for: event))
+//                    }
+//                }
+//                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .topLeading)
+//            }
         }
-        .padding()    }
+        .padding()
+    }
 }
 
 struct EventsView_Previews: PreviewProvider {

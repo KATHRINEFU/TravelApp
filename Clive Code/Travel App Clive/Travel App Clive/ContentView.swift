@@ -7,10 +7,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var eventStore: EventStore
 
     var body: some View {
 
         Base()
+            .environmentObject(eventStore)
 
     }
 }

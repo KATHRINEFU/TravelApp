@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C527D542AAD33B2001B496A /* EventMaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C527D532AAD33B2001B496A /* EventMaxView.swift */; };
+		3C527D572AAD33F6001B496A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C527D562AAD33F6001B496A /* ImagePicker.swift */; };
+		3C527D592AAD343F001B496A /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C527D582AAD343F001B496A /* EventListView.swift */; };
+		3C527D5C2AAD3491001B496A /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C527D5B2AAD3491001B496A /* EventStore.swift */; };
 		3F0CD6452A9204D500405FE8 /* Travel_App_CliveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */; };
 		3F0CD6472A9204D500405FE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6462A9204D500405FE8 /* ContentView.swift */; };
 		3F0CD6492A9204D600405FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CD6482A9204D600405FE8 /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C527D532AAD33B2001B496A /* EventMaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMaxView.swift; sourceTree = "<group>"; };
+		3C527D562AAD33F6001B496A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		3C527D582AAD343F001B496A /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		3C527D5B2AAD3491001B496A /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 		3F0CD6412A9204D500405FE8 /* Travel App Clive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel App Clive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_App_CliveApp.swift; sourceTree = "<group>"; };
 		3F0CD6462A9204D500405FE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C527D552AAD33E3001B496A /* UtilComponents */ = {
+			isa = PBXGroup;
+			children = (
+				3C527D562AAD33F6001B496A /* ImagePicker.swift */,
+			);
+			path = UtilComponents;
+			sourceTree = "<group>";
+		};
+		3C527D5A2AAD347C001B496A /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				3C527D5B2AAD3491001B496A /* EventStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		3F0CD6382A9204D500405FE8 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +92,7 @@
 		3F0CD6432A9204D500405FE8 /* Travel App Clive */ = {
 			isa = PBXGroup;
 			children = (
+				3C527D5A2AAD347C001B496A /* Store */,
 				3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */,
 				3F0CD6462A9204D500405FE8 /* ContentView.swift */,
 				3F0CD6612A923A6600405FE8 /* Components */,
@@ -90,6 +115,7 @@
 		3F0CD6612A923A6600405FE8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3C527D552AAD33E3001B496A /* UtilComponents */,
 				3F0CD6672A92455500405FE8 /* BaseComponents */,
 				3F0CD66D2A92461D00405FE8 /* EventsComponents */,
 				3F0CD6532A9206BC00405FE8 /* Base.swift */,
@@ -113,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				3F0CD66E2A92476900405FE8 /* EventMiniView.swift */,
+				3C527D532AAD33B2001B496A /* EventMaxView.swift */,
+				3C527D582AAD343F001B496A /* EventListView.swift */,
 			);
 			path = EventsComponents;
 			sourceTree = "<group>";
@@ -188,13 +216,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0CD6542A9206BC00405FE8 /* Base.swift in Sources */,
+				3C527D542AAD33B2001B496A /* EventMaxView.swift in Sources */,
 				3F0CD6652A923E2E00405FE8 /* TabButton.swift in Sources */,
 				3F0CD66F2A92476900405FE8 /* EventMiniView.swift in Sources */,
 				3F0CD6562A92090900405FE8 /* BottomMenu.swift in Sources */,
 				3F0CD65E2A922C2A00405FE8 /* ViewExtension.swift in Sources */,
 				3F0CD6602A922EED00405FE8 /* NotificationBar.swift in Sources */,
 				3F0CD6472A9204D500405FE8 /* ContentView.swift in Sources */,
+				3C527D592AAD343F001B496A /* EventListView.swift in Sources */,
 				3F0CD65C2A92285200405FE8 /* TopMenu.swift in Sources */,
+				3C527D5C2AAD3491001B496A /* EventStore.swift in Sources */,
+				3C527D572AAD33F6001B496A /* ImagePicker.swift in Sources */,
 				3F0CD6452A9204D500405FE8 /* Travel_App_CliveApp.swift in Sources */,
 				3F0CD66C2A92461900405FE8 /* EventsView.swift in Sources */,
 			);

@@ -10,6 +10,8 @@ import SwiftUI
 struct Base: View {
     
     @State var selectedTab = "Events"
+    
+    @EnvironmentObject var eventStore: EventStore
 
     var body: some View {
         
@@ -21,6 +23,7 @@ struct Base: View {
                     .tag("Events")
                     .frame(width: getRect().width, height: getRect().height*0.75)
                     .offset(y: getRect().height*0.025)
+                    .environmentObject(eventStore)
 
                 Text("Map")
                     .tag("Map")
