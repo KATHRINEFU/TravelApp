@@ -17,3 +17,14 @@ struct Message: Identifiable {
     var text: String
     var image: String
 }
+
+struct Poll: Identifiable {
+    let id = UUID()
+    var trip: String
+    var question: String
+    var author: String
+    var options: [String]
+    var votes: [Int]
+    var chat: [Message]
+}
+

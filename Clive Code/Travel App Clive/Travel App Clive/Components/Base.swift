@@ -26,15 +26,23 @@ struct Base: View {
                 
                 EventsView()
                     .tag("Events")
-                    .frame(width: getRect().width, height: getRect().height*0.75)
+                    .frame(height: getRect().height - 80)
+                    .padding(.top, 180)
                     .offset(y: getRect().height*0.025)
                     .environmentObject(eventStore)
 
+                
                 MapView()
                     .tag("Map")
+                    .frame(height: getRect().height - 80)
+                    .padding(.top, 180)
                 
-                Text("Poll")
-                    .tag("Poll")
+                PollsView()
+                    .tag("Polls")
+                    .frame(height: getRect().height - 80)
+                    .padding(.top, 180)
+
+
                 
                 Text("Feed")
                     .tag("Feed")
@@ -42,8 +50,13 @@ struct Base: View {
             }
 
             
-            BottomMenu(selectedTab: $selectedTab)
-            
+            VStack {
+                
+                Spacer()
+                BottomMenu(selectedTab: $selectedTab)
+            }
+            .frame(height: getRect().height)
+
             TopMenu(showNotifications: $showNotifications, notification: $notifications[0])
                         
         }
