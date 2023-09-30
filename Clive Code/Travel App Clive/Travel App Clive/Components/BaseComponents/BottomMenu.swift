@@ -48,6 +48,6 @@ struct BottomMenu_Previews: PreviewProvider {
         
     static var previews: some View {
         Base()
-        //BottomMenu(selectedTab: $selectedTab)
+            .environmentObject(EventStore())
     }
 }

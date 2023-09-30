@@ -23,6 +23,9 @@
 		3F0CD6652A923E2E00405FE8 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6642A923E2E00405FE8 /* TabButton.swift */; };
 		3F0CD66C2A92461900405FE8 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD66B2A92461900405FE8 /* EventsView.swift */; };
 		3F0CD66F2A92476900405FE8 /* EventMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD66E2A92476900405FE8 /* EventMiniView.swift */; };
+		3F7717BA2AC879D000968895 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7717B92AC879D000968895 /* DataModels.swift */; };
+		3F7717BD2AC87D3900968895 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7717BC2AC87D3900968895 /* MessageView.swift */; };
+		3F7717BF2AC87DDB00968895 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7717BE2AC87DDB00968895 /* NotificationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		3F0CD6642A923E2E00405FE8 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		3F0CD66B2A92461900405FE8 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		3F0CD66E2A92476900405FE8 /* EventMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMiniView.swift; sourceTree = "<group>"; };
+		3F7717B92AC879D000968895 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		3F7717BC2AC87D3900968895 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		3F7717BE2AC87DDB00968895 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,14 +98,15 @@
 		3F0CD6432A9204D500405FE8 /* Travel App Clive */ = {
 			isa = PBXGroup;
 			children = (
+				3F7717B82AC879B300968895 /* Models */,
 				3C527D5A2AAD347C001B496A /* Store */,
 				3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */,
 				3F0CD6462A9204D500405FE8 /* ContentView.swift */,
 				3F0CD6612A923A6600405FE8 /* Components */,
 				3F0CD6482A9204D600405FE8 /* Assets.xcassets */,
 				3F0CD64A2A9204D600405FE8 /* Travel_App_Clive.entitlements */,
-				3F0CD64B2A9204D600405FE8 /* Preview Content */,
 				3F0CD65D2A922C2A00405FE8 /* ViewExtension.swift */,
+				3F0CD64B2A9204D600405FE8 /* Preview Content */,
 			);
 			path = "Travel App Clive";
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 		3F0CD6612A923A6600405FE8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3F7717BB2AC87CFB00968895 /* NotificationsComponents */,
 				3C527D552AAD33E3001B496A /* UtilComponents */,
 				3F0CD6672A92455500405FE8 /* BaseComponents */,
 				3F0CD66D2A92461D00405FE8 /* EventsComponents */,
@@ -143,6 +151,23 @@
 				3C527D582AAD343F001B496A /* EventListView.swift */,
 			);
 			path = EventsComponents;
+			sourceTree = "<group>";
+		};
+		3F7717B82AC879B300968895 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F7717B92AC879D000968895 /* DataModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F7717BB2AC87CFB00968895 /* NotificationsComponents */ = {
+			isa = PBXGroup;
+			children = (
+				3F7717BC2AC87D3900968895 /* MessageView.swift */,
+				3F7717BE2AC87DDB00968895 /* NotificationsView.swift */,
+			);
+			path = NotificationsComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7717BF2AC87DDB00968895 /* NotificationsView.swift in Sources */,
 				3F0CD6542A9206BC00405FE8 /* Base.swift in Sources */,
 				3C527D542AAD33B2001B496A /* EventMaxView.swift in Sources */,
 				3F0CD6652A923E2E00405FE8 /* TabButton.swift in Sources */,
@@ -227,6 +253,8 @@
 				3F0CD65C2A92285200405FE8 /* TopMenu.swift in Sources */,
 				3C527D5C2AAD3491001B496A /* EventStore.swift in Sources */,
 				3C527D572AAD33F6001B496A /* ImagePicker.swift in Sources */,
+				3F7717BD2AC87D3900968895 /* MessageView.swift in Sources */,
+				3F7717BA2AC879D000968895 /* DataModels.swift in Sources */,
 				3F0CD6452A9204D500405FE8 /* Travel_App_CliveApp.swift in Sources */,
 				3F0CD66C2A92461900405FE8 /* EventsView.swift in Sources */,
 			);
@@ -367,10 +395,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.travel.Travel-App-Clive";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,10 +433,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.travel.Travel-App-Clive";
 				PRODUCT_NAME = "$(TARGET_NAME)";
