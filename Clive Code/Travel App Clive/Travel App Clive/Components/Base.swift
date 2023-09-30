@@ -30,7 +30,7 @@ struct Base: View {
                     .offset(y: getRect().height*0.025)
                     .environmentObject(eventStore)
 
-                Text("Map")
+                MapView()
                     .tag("Map")
                 
                 Text("Poll")
