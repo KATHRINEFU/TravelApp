@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct EventType: Identifiable, Hashable {
     let id = UUID()
@@ -15,11 +16,14 @@ struct EventType: Identifiable, Hashable {
 
 struct EventMaxView: View {
     let eventTypes: [EventType] = [
+            EventType(name: "Transport", icon: "✈️"),
             EventType(name: "Restaurant", icon: "🍔"),
             EventType(name: "Concert", icon: "🎵"),
             EventType(name: "Movie", icon: "🎬"),
+            EventType(name: "Place", icon: "🏞️"),
+            EventType(name: "Sport", icon: "🎾"),
+            EventType(name: "Nature", icon: "🏔️"),
     ]
-    
     @State private var selectedEventType: EventType?
     @State private var name: String = ""
     @State private var location: String = ""
@@ -30,111 +34,173 @@ struct EventMaxView: View {
     @State private var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
     
-    @Binding var isPresented: Bool
+    @State private var selectedLocation: MKLocalSearchCompletion?
+    @State private var searchResults: [MKLocalSearchCompletion] = []
     
     @EnvironmentObject var eventStore: EventStore
+    @Environment(\.dismiss) var dismiss
+    
+    @ObservedObject var locationService: LocationService
+    
+    @State private var isEditingEvent = false
+    
+    init() {
+            _selectedEventType = State(initialValue: eventTypes.first)
+        locationService = LocationService()
+        }
     
     let buttonWidth: CGFloat = 100 // Adjust the width as needed
     
     var body: some View {
         ScrollView{
-            VStack {
-                Text("Add Event").font(.largeTitle)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(eventTypes, id: \.self) { eventType in
-                            Button(action: {
-                                selectedEventType = eventType
-                            }) {
-                                VStack {
-                                    Text(eventType.icon)
-                                        .font(.largeTitle)
-                                    Text(eventType.name)
-                                        .fontWeight(.semibold)
+            VStack(spacing: 0){
+                ZStack(alignment: .topLeading) {
+                    if let selectedImage = selectedImage {
+                        Image(uiImage: selectedImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 180)
+                            .clipped()
+                    } else {
+                        Image("upload-cloud-icon") // Default image name
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 180)
+                    }
+                    
+                    VStack{
+                        
+                        Text(name.isEmpty ? "Untitled Event" : name)
+                            .font(.largeTitle)
+                            .padding(.top, 10)
+                            .background(selectedImage != nil ? Color.white.opacity(0.5) : Color.clear)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(eventTypes, id: \.self) { eventType in
+                                    Button(action: {
+                                        selectedEventType = eventType
+                                    }) {
+                                        VStack {
+                                            Text(eventType.icon)
+                                                .font(.largeTitle)
+                                            Text(eventType.name)
+                                                .fontWeight(.semibold)
+                                        }
+                                    }
+                                    .frame(width: buttonWidth)
+                                    .padding()
+                                    .background(selectedEventType == eventType ? Color.blue : Color.pink)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
                                 }
                             }
-                            .frame(width: buttonWidth)
-                            .padding()
-                            .background(selectedEventType == eventType ? Color.blue : Color.pink)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
                         }
                     }
                 }
+                
                 
                 VStack{
                     TextField("Event Name", text: $name)
                         .padding()
                     
-                    TextField("Location", text: $location)
+                    TextField("Search Location", text: $locationService.queryFragment)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
+                    
+                    if locationService.status == .isSearching {
+                        ProgressView("Searching...")
+                            .padding()
+                    }
+                    //                        else if locationService.status == .result {
+                    //                            searchResults = locationService.searchResults
+                    //                        }
+                    
+                    if !searchResults.isEmpty {
+                        List(searchResults, id: \.title) { result in
+                            Button(action: {
+                                selectedLocation = result
+                            }) {
+                                Text("\(result.title), \(result.subtitle)")
+                            }
+                        }
+                    }
                     
                     DatePicker("Date", selection: $date, in: ...Date(), displayedComponents: .date)
                         .padding()
                     
-                    DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute)
-                        .padding()
+                    HStack {
+                        DatePicker("From", selection: $startTime, displayedComponents: .hourAndMinute)
+                        DatePicker("To", selection: $endTime, displayedComponents: .hourAndMinute)
+                    }
+                    .padding()
                     
-                    DatePicker("End Time", selection: $endTime, displayedComponents: .hourAndMinute)
-                        .padding()
+                }.onReceive(locationService.$searchResults) { newSearchResults in
+                    searchResults = newSearchResults
                     
-                    TextField("Cost", value: $cost, format: .currency(code: "USD"))
-                        .padding()
-                }
-                
-                
-                if let selectedImage = selectedImage {
-                    Image(uiImage: selectedImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 100)
-                        .padding()
-                } else {
-                    Image("upload-cloud-icon") // Make sure to replace "upload-cloud-icon" with the actual image name in your assets
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 100)
-                        .padding()
+                    print(searchResults)
                 }
                 
                 Button(action: {
                     isImagePickerPresented.toggle()
                 }) {
-                    Text("Upload Cover")
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                    HStack {
+                        Image(systemName: "photo.on.rectangle")
+                        Text("Upload Cover")
+                    }
+                    .font(.headline)
+                    .padding()
+                    .foregroundColor(.blue)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.blue, lineWidth: 2)
+                    )
                 }
                 .sheet(isPresented: $isImagePickerPresented) {
                     ImagePicker(selectedImage: $selectedImage)
                 }
-                .padding()
+                .padding(20)
                 
-                Button(action: {
-                    let event = Event(eventIcon: selectedEventType?.icon ?? "",
-                        name:name,
-                        location: location,
-                        image: selectedImage,
-                        startTime: startTime,
-                        endTime: endTime
-                    )
-                    eventStore.addEvent(event: event)
-                    isPresented = false
-                }) {
-                    Text("Save")
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.pink)
-                        .cornerRadius(10)
-                }
-                .padding()
-                
-//                EventView(
-//                    eventIcon: selectedEventType?.icon ?? "",
-//                    location: location,
-//                    image: selectedImage)
+                HStack {
+                        Button(action: {
+                            dismiss()
+                        }) {
+                            Text("Cancel")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.gray) // You can use any desired color
+                                .cornerRadius(10)
+                                .font(.headline)
+                        }
+                        .frame(width: 150)
+                        
+                        Spacer() // Add spacing between the buttons
+                        
+                        Button(action: {
+                            let event = Event(eventIcon: selectedEventType?.icon ?? "",
+                                              name: name,
+                                              location: location,
+                                              image: selectedImage,
+                                              startTime: startTime,
+                                              endTime: endTime
+                            )
+                            eventStore.addEvent(event: event)
+                            dismiss()
+                        }) {
+                            Text("Save")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.pink)
+                                .cornerRadius(10)
+                                .font(.headline)
+                        }
+                        .frame(width: 150)
+                    }
             }
         }
     }
+    
+}
+
+#Preview {
+    EventMaxView()
 }
