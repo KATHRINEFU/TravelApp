@@ -145,78 +145,46 @@ struct EventsView: View {
     @State var horizontalOffset: CGPoint = .init(x: 0, y: 0)
     @State var verticalOffset: CGPoint = .init(x: 0, y: 0)
     
-    @State private var isAddEventViewPresented = false
+    @State private var isEventMaxViewPresented = false
     @EnvironmentObject var eventStore: EventStore
 
     var body: some View {
-        VStack {
-            ScrollableView($horizontalOffset, isHorizontal: true, content: {
-                HTimeline()
-            })
-            .onChange(of: verticalOffset) { newValue in
-                horizontalOffset.x = newValue.y
-            }
-            .frame(height: 200.0)
-            
-            GeometryReader {geometry in
-                HStack(spacing: 5){
-                    ScrollableView($verticalOffset, isHorizontal: false, content: {
-                        VTimeline()
-                    })
-                    .onChange(of: horizontalOffset) { newValue in
-                        verticalOffset.y = newValue.x
-                    }
-                    .frame(width: geometry.size.width * 0.33, height: 500.0)
+        ZStack{
+            VStack {
+                ScrollableView($horizontalOffset, isHorizontal: true, content: {
+                    HTimeline()
+                })
+                .onChange(of: verticalOffset) { oldValue, newValue in
+                    horizontalOffset.x = newValue.y
                 }
+                .frame(height: 200.0)
                 
-                ZStack {
-                    ForEach(eventStore.events) { event in
-                        EventListView(eventIcon: event.eventIcon,
-                                  location: event.location,
-                                  image: event.image)
-                            .position(calculatePosition(for: event))
+                GeometryReader {geometry in
+                    HStack(spacing: 5){
+                        ScrollableView($verticalOffset, isHorizontal: false, content: {
+                            VTimeline()
+                        })
+                        .onChange(of: horizontalOffset) { oldValue, newValue in
+                            verticalOffset.y = newValue.x
+                        }
+                        .frame(width: geometry.size.width * 0.33, height: 500.0)
                     }
-                }.frame(width: geometry.size.width * 0.67, height: 500.0)
+                }
             }
-
-
-//            VStack {
-//                Text("Horizontal Offset: x: \(horizontalOffset.x) y: \(horizontalOffset.y)")
-//                Text("Vertical Offset: x: \(verticalOffset.x) y: \(verticalOffset.y)")
-//                Button("Top", action: {
-//                    horizontalOffset = .zero
-//                    verticalOffset = .zero
-//                })
-//                .buttonStyle(.borderedProminent)
-//            }
-//            .frame(width: 200)
-//            .padding()
+            
             
             Button(action: {
-                isAddEventViewPresented.toggle() // Show the EventMaxView
+                isEventMaxViewPresented.toggle()
             }) {
-                Text("Add Event")
+                Image(systemName: "plus.circle.fill") // You can use a different image here
+                    .font(.system(size: 60))
+                    .foregroundColor(.blue)
                     .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(10)
             }
-            .sheet(isPresented: $isAddEventViewPresented) {
-                EventMaxView(isPresented: $isAddEventViewPresented)
-            }
-            .padding()
-            
-//            GeometryReader { geometry in
-//                ZStack {
-//                    ForEach(eventStore.events) { event in
-//                        EventView(eventIcon: event.eventIcon,
-//                                  location: event.location,
-//                                  image: event.image)
-//                            .position(calculatePosition(for: event))
-//                    }
-//                }
-//                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .topLeading)
-//            }
+            .position(x: UIScreen.main.bounds.width - 80, y: UIScreen.main.bounds.height - 300)
+            .sheet(isPresented: $isEventMaxViewPresented) {
+                            EventMaxView()
+                        }
         }
         .padding()
     }
