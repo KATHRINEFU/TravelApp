@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 extension View {
         
@@ -64,4 +65,20 @@ struct ShadowBox: ViewModifier {
             .shadow(color: Color.black.opacity(0.06), radius: 5, x: 2, y: 2)
             .shadow(color: Color.black.opacity(0.06), radius: 5, x: -2, y: 2)
     }
+}
+
+extension CLLocationCoordinate2D {
+    
+    static var myLocation: CLLocationCoordinate2D {
+        return .init(latitude: 37.3346, longitude: -122.0090)
+    }
+    
+}
+
+extension MKCoordinateRegion {
+    
+    static var myRegion: MKCoordinateRegion {
+        return .init(center: .myLocation, latitudinalMeters: 10000, longitudinalMeters: 10000)
+    }
+    
 }

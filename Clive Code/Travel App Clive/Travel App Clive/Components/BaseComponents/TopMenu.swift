@@ -9,8 +9,9 @@ import SwiftUI
 
 struct TopMenu: View {
     
-    @State var text: String = "Get up and meet at 8 at the lobby!"
     @State var font: UIFont = .systemFont(ofSize: 16, weight: .regular)
+    @Binding var showNotifications: Bool
+    @Binding var notification: Message
 
     var body: some View {
         
@@ -28,9 +29,11 @@ struct TopMenu: View {
 
                 Spacer()
                 
-                Button(action: {}, label: {                    
+                Button(action: {
+                    showNotifications = true
+                }, label: {
 
-                    NotificationBar(text: text, font: font)
+                    NotificationBar(text: "\(notification.user_name):  \(notification.text)", font: font)
 
                 })
 
@@ -45,10 +48,9 @@ struct TopMenu: View {
                 })
 
             }
-            .overlay {
-                
-            }
+            .ignoresSafeArea()
             .padding(.horizontal)
+            .padding(.top, getSafeArea().top)
             .background(
                 Color(.systemGray6)
             )
@@ -64,5 +66,6 @@ struct TopMenu: View {
 struct TopMenu_Previews: PreviewProvider {
     static var previews: some View {
         Base()
+            .environmentObject(EventStore())
     }
 }

@@ -27,7 +27,7 @@ struct BottomMenu: View {
 
                 Spacer(minLength: 0)
                 
-                TabButton(title: "Poll", image: "align.horizontal.left", selected: $selectedTab)
+                TabButton(title: "Polls", image: "align.horizontal.left", selected: $selectedTab)
 
                 Spacer(minLength: 0)
                 
@@ -36,6 +36,7 @@ struct BottomMenu: View {
             }
             .padding(.vertical, 12)
             .padding(.horizontal)
+            .padding(.bottom, 5)
             .background(Color(.systemGray6))
 
         }
@@ -48,6 +49,6 @@ struct BottomMenu_Previews: PreviewProvider {
         
     static var previews: some View {
         Base()
-        //BottomMenu(selectedTab: $selectedTab)
+            .environmentObject(EventStore())
     }
 }
