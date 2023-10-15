@@ -8,38 +8,64 @@
 import SwiftUI
 
 struct EventListView: View {
-    var eventIcon: String = "🍔"
-    var location: String = "Test Location"
-    var image: UIImage?
-    var screenWidth = UIScreen.main.bounds.width
+    var event: Event
     
     var body: some View {
-        HStack{
-            VStack {
-                Text("🍔")
-                    .font(.largeTitle)
-                Text("Test Location")
-                    .fontWeight(.semibold)
+        GeometryReader { geometry in
+            HStack {
+                VStack {
+                    Text(event.eventIcon)
+                        .font(.largeTitle)
+                    Text(event.location)
+                        .fontWeight(.semibold)
+                }
+                Spacer()
+                
+                if let image = event.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: calculateEventHeight(startTime: event.startTime, endTime: event.endTime))
+                        .cornerRadius(10)
+                } else {
+                    Image("upload-cloud-icon") // Default image name
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: calculateEventHeight(startTime: event.startTime, endTime: event.endTime))
+                        .cornerRadius(10)
+                }
             }
-            Spacer()
-            
-            if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: 100)
-                    .cornerRadius(10)
-            } else {
-                Image("upload-cloud-icon") // Default image name
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 100)
-                    .cornerRadius(10)
-            }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(10)
+            .shadow(radius: 3)
+            .frame(height: calculateEventHeight(startTime: event.startTime, endTime: event.endTime))
         }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 3)
     }
+    
+    
+    func calculateEventHeight(startTime: Date, endTime: Date) -> CGFloat {
+        let calendar = Calendar.current
+        let minutesInAnHour: Double = 60
+        let minutes = Double(calendar.dateComponents([.minute], from: startTime, to: endTime).minute ?? 0)
+        return CGFloat(minutes / minutesInAnHour * 40)
+    }
+}
+
+
+let mockEvent: Event = {
+    var calendar = Calendar.current
+    var dateComponents = DateComponents()
+    dateComponents.hour = 15 // 3 PM
+    dateComponents.minute = 0
+    let startTime = calendar.date(from: dateComponents)!
+    
+    dateComponents.hour = 18 // 5 PM
+    let endTime = calendar.date(from: dateComponents)!
+    
+    return Event(eventIcon: "🍔", name: "Test Event", location: "Test Event", image: nil, startTime: startTime, endTime: endTime)
+}()
+
+#Preview{
+    EventListView(event: mockEvent)
 }

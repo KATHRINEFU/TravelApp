@@ -98,7 +98,7 @@ struct VTimeline: View{
                     HStack {
                         Text(hour)
                             .font(Font.custom("", size: 12))
-                            .frame(width: 50, height: 30, alignment: .center)
+                            .frame(width: 50, height: 40, alignment: .center)
                         VStack {
                             Divider()
                         }
@@ -168,6 +168,7 @@ struct EventsView: View {
                             verticalOffset.y = newValue.x
                         }
                         .frame(width: geometry.size.width * 0.33, height: 500.0)
+                        
                     }
                 }
             }

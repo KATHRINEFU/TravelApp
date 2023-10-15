@@ -69,11 +69,43 @@ struct EventMaxView: View {
                     }
                     
                     VStack{
+                        HStack {
+                            Button(action: {
+                                dismiss()
+                            }) {
+                                Text("Cancel")
+                                    .font(.headline)
+                                    .foregroundColor(.blue)
+                                    .padding(.leading, 20)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            
+                            Text(name.isEmpty ? "Untitled Event" : name)
+                                .font(.title2)
+                                .padding(.top, 10)
+                                .background(selectedImage != nil ? Color.white.opacity(0.5) : Color.clear)
+                            
+                            
+                            Button(action: {
+                                let event = Event(eventIcon: selectedEventType?.icon ?? "",
+                                                  name: name,
+                                                  location: location,
+                                                  image: selectedImage,
+                                                  startTime: startTime,
+                                                  endTime: endTime
+                                )
+                                eventStore.addEvent(event: event)
+                                dismiss()
+                            }) {
+                                Text("Save")
+                                    .font(.headline)
+                                    .foregroundColor(.blue)
+                                    .padding(.trailing, 20)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                        }
                         
-                        Text(name.isEmpty ? "Untitled Event" : name)
-                            .font(.largeTitle)
-                            .padding(.top, 10)
-                            .background(selectedImage != nil ? Color.white.opacity(0.5) : Color.clear)
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(eventTypes, id: \.self) { eventType in
@@ -160,41 +192,41 @@ struct EventMaxView: View {
                 }
                 .padding(20)
                 
-                HStack {
-                        Button(action: {
-                            dismiss()
-                        }) {
-                            Text("Cancel")
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.gray) // You can use any desired color
-                                .cornerRadius(10)
-                                .font(.headline)
-                        }
-                        .frame(width: 150)
-                        
-                        Spacer() // Add spacing between the buttons
-                        
-                        Button(action: {
-                            let event = Event(eventIcon: selectedEventType?.icon ?? "",
-                                              name: name,
-                                              location: location,
-                                              image: selectedImage,
-                                              startTime: startTime,
-                                              endTime: endTime
-                            )
-                            eventStore.addEvent(event: event)
-                            dismiss()
-                        }) {
-                            Text("Save")
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.pink)
-                                .cornerRadius(10)
-                                .font(.headline)
-                        }
-                        .frame(width: 150)
-                    }
+//                HStack {
+//                        Button(action: {
+//                            dismiss()
+//                        }) {
+//                            Text("Cancel")
+//                                .padding()
+//                                .foregroundColor(.white)
+//                                .background(Color.gray) // You can use any desired color
+//                                .cornerRadius(10)
+//                                .font(.headline)
+//                        }
+//                        .frame(width: 150)
+//                        
+//                        Spacer() // Add spacing between the buttons
+//                        
+//                        Button(action: {
+//                            let event = Event(eventIcon: selectedEventType?.icon ?? "",
+//                                              name: name,
+//                                              location: location,
+//                                              image: selectedImage,
+//                                              startTime: startTime,
+//                                              endTime: endTime
+//                            )
+//                            eventStore.addEvent(event: event)
+//                            dismiss()
+//                        }) {
+//                            Text("Save")
+//                                .padding()
+//                                .foregroundColor(.white)
+//                                .background(Color.pink)
+//                                .cornerRadius(10)
+//                                .font(.headline)
+//                        }
+//                        .frame(width: 150)
+//                    }
             }
         }
     }
