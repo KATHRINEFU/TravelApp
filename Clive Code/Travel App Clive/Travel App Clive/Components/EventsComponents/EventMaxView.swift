@@ -96,6 +96,7 @@ struct EventMaxView: View {
                                                   endTime: endTime
                                 )
                                 eventStore.addEvent(event: event)
+                                print(eventStore.events)
                                 dismiss()
                             }) {
                                 Text("Save")
@@ -135,27 +136,26 @@ struct EventMaxView: View {
                     TextField("Event Name", text: $name)
                         .padding()
                     
-                    TextField("Search Location", text: $locationService.queryFragment)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("Search Location", text: $location)
                         .padding()
                     
-                    if locationService.status == .isSearching {
-                        ProgressView("Searching...")
-                            .padding()
-                    }
+//                    if locationService.status == .isSearching {
+//                        ProgressView("Searching...")
+//                            .padding()
+//                    }
                     //                        else if locationService.status == .result {
                     //                            searchResults = locationService.searchResults
                     //                        }
-                    
-                    if !searchResults.isEmpty {
-                        List(searchResults, id: \.title) { result in
-                            Button(action: {
-                                selectedLocation = result
-                            }) {
-                                Text("\(result.title), \(result.subtitle)")
-                            }
-                        }
-                    }
+//                    
+//                    if !searchResults.isEmpty {
+//                        List(searchResults, id: \.title) { result in
+//                            Button(action: {
+//                                selectedLocation = result
+//                            }) {
+//                                Text("\(result.title), \(result.subtitle)")
+//                            }
+//                        }
+//                    }
                     
                     DatePicker("Date", selection: $date, in: ...Date(), displayedComponents: .date)
                         .padding()

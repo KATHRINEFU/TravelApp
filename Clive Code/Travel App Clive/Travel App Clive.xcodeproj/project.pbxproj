@@ -12,6 +12,7 @@
 		3C527D592AAD343F001B496A /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C527D582AAD343F001B496A /* EventListView.swift */; };
 		3C527D5C2AAD3491001B496A /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C527D5B2AAD3491001B496A /* EventStore.swift */; };
 		3CB58FA12AD9D26900F22053 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB58FA02AD9D26900F22053 /* LocationService.swift */; };
+		3CDFF8F82ADB7FE300AA64EB /* GooglePlaceAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDFF8F72ADB7FE300AA64EB /* GooglePlaceAutoComplete.swift */; };
 		3F0CD6452A9204D500405FE8 /* Travel_App_CliveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */; };
 		3F0CD6472A9204D500405FE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CD6462A9204D500405FE8 /* ContentView.swift */; };
 		3F0CD6492A9204D600405FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CD6482A9204D600405FE8 /* Assets.xcassets */; };
@@ -32,14 +33,17 @@
 		3F7717C62AC885B500968895 /* PollCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7717C52AC885B500968895 /* PollCardView.swift */; };
 		3F7717C82AC885F300968895 /* PollDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7717C72AC885F300968895 /* PollDetailView.swift */; };
 		3F7717CA2AC88E8400968895 /* PollsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7717C92AC88E8400968895 /* PollsListView.swift */; };
+		68FDB529A5BC99055CD253EE /* libPods-Travel App Clive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9978A78A0B79FA69947BCB38 /* libPods-Travel App Clive.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17879E622B4B589448AC924A /* Pods-Travel App Clive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel App Clive.debug.xcconfig"; path = "Target Support Files/Pods-Travel App Clive/Pods-Travel App Clive.debug.xcconfig"; sourceTree = "<group>"; };
 		3C527D532AAD33B2001B496A /* EventMaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMaxView.swift; sourceTree = "<group>"; };
 		3C527D562AAD33F6001B496A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		3C527D582AAD343F001B496A /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		3C527D5B2AAD3491001B496A /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 		3CB58FA02AD9D26900F22053 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		3CDFF8F72ADB7FE300AA64EB /* GooglePlaceAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlaceAutoComplete.swift; sourceTree = "<group>"; };
 		3F0CD6412A9204D500405FE8 /* Travel App Clive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel App Clive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0CD6442A9204D500405FE8 /* Travel_App_CliveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_App_CliveApp.swift; sourceTree = "<group>"; };
 		3F0CD6462A9204D500405FE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		3F7717C52AC885B500968895 /* PollCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollCardView.swift; sourceTree = "<group>"; };
 		3F7717C72AC885F300968895 /* PollDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollDetailView.swift; sourceTree = "<group>"; };
 		3F7717C92AC88E8400968895 /* PollsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsListView.swift; sourceTree = "<group>"; };
+		9978A78A0B79FA69947BCB38 /* libPods-Travel App Clive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Travel App Clive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71DD296C3A0EDE430D4F2B2 /* Pods-Travel App Clive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel App Clive.release.xcconfig"; path = "Target Support Files/Pods-Travel App Clive/Pods-Travel App Clive.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +75,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68FDB529A5BC99055CD253EE /* libPods-Travel App Clive.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12905653CCC4F0AC6C79413E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17879E622B4B589448AC924A /* Pods-Travel App Clive.debug.xcconfig */,
+				B71DD296C3A0EDE430D4F2B2 /* Pods-Travel App Clive.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3C527D552AAD33E3001B496A /* UtilComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +113,8 @@
 			children = (
 				3F0CD6432A9204D500405FE8 /* Travel App Clive */,
 				3F0CD6422A9204D500405FE8 /* Products */,
+				12905653CCC4F0AC6C79413E /* Pods */,
+				A96A27FB205A0BBF503B9971 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +184,7 @@
 				3C527D532AAD33B2001B496A /* EventMaxView.swift */,
 				3C527D582AAD343F001B496A /* EventListView.swift */,
 				3CB58FA02AD9D26900F22053 /* LocationService.swift */,
+				3CDFF8F72ADB7FE300AA64EB /* GooglePlaceAutoComplete.swift */,
 			);
 			path = EventsComponents;
 			sourceTree = "<group>";
@@ -196,6 +216,14 @@
 			path = PollComponents;
 			sourceTree = "<group>";
 		};
+		A96A27FB205A0BBF503B9971 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9978A78A0B79FA69947BCB38 /* libPods-Travel App Clive.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F0CD6502A9204D600405FE8 /* Build configuration list for PBXNativeTarget "Travel App Clive" */;
 			buildPhases = (
+				C84168C0DC853A0FA70788C2 /* [CP] Check Pods Manifest.lock */,
 				3F0CD63D2A9204D500405FE8 /* Sources */,
 				3F0CD63E2A9204D500405FE8 /* Frameworks */,
 				3F0CD63F2A9204D500405FE8 /* Resources */,
+				D5D2245F063849B0137171FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +291,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C84168C0DC853A0FA70788C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Travel App Clive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5D2245F063849B0137171FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travel App Clive/Pods-Travel App Clive-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travel App Clive/Pods-Travel App Clive-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travel App Clive/Pods-Travel App Clive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3F0CD63D2A9204D500405FE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -270,6 +342,7 @@
 				3F0CD6542A9206BC00405FE8 /* Base.swift in Sources */,
 				3C527D542AAD33B2001B496A /* EventMaxView.swift in Sources */,
 				3CB58FA12AD9D26900F22053 /* LocationService.swift in Sources */,
+				3CDFF8F82ADB7FE300AA64EB /* GooglePlaceAutoComplete.swift in Sources */,
 				3F0CD6652A923E2E00405FE8 /* TabButton.swift in Sources */,
 				3F0CD66F2A92476900405FE8 /* EventMiniView.swift in Sources */,
 				3F0CD6562A92090900405FE8 /* BottomMenu.swift in Sources */,
@@ -406,6 +479,7 @@
 		};
 		3F0CD6512A9204D600405FE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17879E622B4B589448AC924A /* Pods-Travel App Clive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +518,7 @@
 		};
 		3F0CD6522A9204D600405FE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B71DD296C3A0EDE430D4F2B2 /* Pods-Travel App Clive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
